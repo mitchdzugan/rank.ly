@@ -1,4 +1,4 @@
-module UI.Entry.Site where
+module Entry.Site where
 
 import Prelude
 import App

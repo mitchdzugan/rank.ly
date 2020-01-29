@@ -25,7 +25,7 @@ import Node.FS.Sync (readTextFile)
 import Node.HTTP (Server)
 import Server.Socket
 import Route
-import UI.Entry.Site (entry)
+import Entry.Site (entry)
 import App
 
 pushRoute :: Route -> Effect Unit
@@ -62,7 +62,7 @@ app pre post = do
       Left _ -> do
         next
   -- everything else
-  use $ static "dist"
+  use $ static "../rankly-web/dist"
   -- invalid route error page
   get (unsafeRegex """.*""" noFlags) do
     sb_route <- liftEffect $ FRP.eff_sigBuilder $ FRP.s_const Error
@@ -80,7 +80,7 @@ app pre post = do
 
 main :: Effect Unit
 main = do
-  indexHtml <- readTextFile UTF8 "./dist/index.html"
+  indexHtml <- readTextFile UTF8 "../rankly-web/dist/index.html"
   let splits = split (Pattern "__SSR_CONTENT__") indexHtml
       pre  = fromMaybe "" $ splits !! 0
       post = fromMaybe "" $ splits !! 1

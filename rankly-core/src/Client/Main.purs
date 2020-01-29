@@ -10,7 +10,7 @@ import Route
 import Data.Either
 import Client.Socket as Socket
 import Data.Maybe
-import UI.Entry.Site (entry)
+import Entry.Site (entry)
 import App
 
 main :: Effect Unit

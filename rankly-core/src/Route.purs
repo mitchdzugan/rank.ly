@@ -10,49 +10,17 @@ import Routing.Duplex.Generic.Syntax ((/), (?))
 import Routing.Duplex.Parser (RouteError)
 import Data.Maybe
 
-data RankingRoute
-  = All
-  | Create
-  | Show Int
-  | Clone Int
-derive instance genericRankingRoute :: Generic RankingRoute _
-rankingRouteSpec :: RouteDuplex' RankingRoute
-rankingRouteSpec = G.sum
-  { "All": G.noArgs
-  , "Create": "create" / G.noArgs
-  , "Show": int segment
-  , "Clone": int segment / "clone"
-  }
-
-
-data UserRoute
-  = View Int
-  | ViewRanking Int Int
-derive instance genericUserRoute :: Generic UserRoute _
-userRouteSpec :: RouteDuplex' UserRoute
-userRouteSpec = G.sum
-  { "View": int segment
-  , "ViewRanking": int segment / int segment
-  }
-
-
 data Route
   = Home
-  | Search
-  | Login
-  | Register
-  | User UserRoute
-  | Ranking RankingRoute
+  | Resume
+  | Impulse
   | Error
 derive instance genericRoute :: Generic Route _
 routeSpec :: RouteDuplex' Route
 routeSpec = root $ G.sum
   { "Home": G.noArgs
-  , "Search": "search" / G.noArgs
-  , "Login": "login" / G.noArgs
-  , "Register": "register" / G.noArgs
-  , "User": "user" / userRouteSpec
-  , "Ranking": "ranking" / rankingRouteSpec
+  , "Resume": "resume" / G.noArgs
+  , "Impulse": "impulse" / G.noArgs
   , "Error": G.noArgs
   }
 

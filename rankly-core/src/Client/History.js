@@ -1,23 +1,17 @@
 "use strict";
 
-// const { createBrowserHistory } = require('history');
+const { createBrowserHistory } = require('history');
 
 let history = { push: () => {} };
 
-exports.init = makeRoute => () => {
-	/*
-	console.log('oh');
+exports.init = eff_sigBuilder => s_from => eventPush => historyEvent => makeRoute => () => {
 	history = createBrowserHistory();
 	const initRoute = makeRoute(history.location.pathname);
-	const historyEvent = frp.mkEvent();
 	history.listen((location) => {
 		const currRoute = makeRoute(location.pathname);
-		frp.push(currRoute)(historyEvent)();
+		eventPush(currRoute)(historyEvent)();
 	});
-	const res = frp.s_buildImpl(frp.s_fromImpl(historyEvent)(initRoute))().signal;
-	console.log(res);
-	return res;
-	*/
+	return eff_sigBuilder(s_from(historyEvent)(initRoute))().signal;
 };
 
 exports.push = s => () => history.push(s);

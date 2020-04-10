@@ -1,0 +1,91 @@
+.pre {
+    white-space: pre;
+    font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+    background: #f5f2f0;
+    margin: 0 0.2em;
+    padding: 0.2em 0.2em;
+}
+
+.spacer {
+    height: 10em;
+    width: 1px;
+}
+
+.mini-spacer {
+    height: 5em;
+    width: 1px;
+}
+
+#resume {
+    border: 1px solid #dbdbdb;
+    border-top: 0;
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding: 0 5rem;
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 
+                      0 0  0 2px rgb(255,255,255),
+                      0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+#resume .section {
+    padding: 1.5rem;
+}
+
+#resume li {
+    position: relative;
+}
+
+#resume ul {
+    position: relative;
+}
+
+.vid-indicator {
+    position: absolute;
+    top: calc(50% - 1.2rem);
+    left: -6rem;
+}
+
+.video-content {
+    height: 60vh;
+    display: flex;
+    margin: auto;
+}
+
+.resume-page {
+    display: flex;
+    flex-direction: row;
+}
+
+.resume-nav {
+    width: 45rem;
+    position: relative;
+}
+
+@media only screen and (max-width: 1200px) {
+    .resume-nav {
+        width: 0rem;
+        opacity: 0;
+    }
+}
+
+.nav-content {
+    padding: 5rem 1.2rem;
+    position: sticky;
+    top: 0;
+}
+
+.navWrapper {
+    font-size: 1.4rem;
+}
+
+.navItem {
+    margin-left: 1.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.8em;
+}
+
+.navLink:hover {
+    color: #3273dc;
+    cursor: pointer;
+}

@@ -1,5 +1,7 @@
 #!/bin/bash
 
 cd ./rankly-core
-pulp --watch --then "./postbuild.sh" build
+npm i
+bower i
+pulp --watch --then "./postbuild.sh" --else "notify-send -i face-angry \"Build Error!\"" build
 cd ../

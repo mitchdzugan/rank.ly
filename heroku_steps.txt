@@ -1,0 +1,11 @@
+: 1585037515:0;cd
+: 1585037518:0;cd prod-build
+: 1585037520:0;rm -rf output dist
+: 1585037524:0;cp -r ~/Projects/mitchdzugan.com/rankly-web/dist ./
+: 1585037530:0;cp -r ~/Projects/mitchdzugan.com/rankly-core/output ./
+: 1585037533:0;git diff
+: 1585037547:0;vim output/Server.Main/index.js
+: 1585037589:0;node server.js
+: 1585037648:0;git add -A
+: 1585037655:0;git commit -m "final styling"
+: 1585037660:0;git push heroku master

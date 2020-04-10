@@ -125,6 +125,10 @@ resumeNav = do
                                                       , id: "impulse"
                                                       , children: []
                                                       }
+                                            , NavItem { title: "Quarantine Liverpool"
+                                                      , id: "liverpool"
+                                                      , children: []
+                                                      }
                                             , NavItem { title: "Super Smash Bros. Melee Projects"
                                                       , id: "ssbm"
                                                       , children: []
@@ -262,6 +266,22 @@ resumeContent = div_ (className "content" *> id "resume") do
           a_ (href "http://www.mdzugan.com/impulse") $ text "here"
           text " and additional documentation is hosted on "
           a_ (href "https://pursuit.purescript.org/packages/purescript-impulse/3.0.0/docs/Impulse.DOM") $ text "Pursuit"
+    section_ (className "section" *> id "liverpool") do
+      p_ (anil) do
+        span_ (className "is-size-5 has-text-weight-bold") $ text "Quarantine Liverpool"
+        span_ (className "has-text-weight-bold is-italic") $ text " (javascript) "
+        a_ (href "https://github.com/mitchdzugan/liverpool") $ text "https://github.com/mitchdzugan/liverpool"
+      ul_ anil do
+        vidIndicator [ { vod: "/liverpool.mp4"
+                       , desc: "This video shows a typical hand being played."
+                       }
+                     ]
+        li_ anil do
+          text "Online version of Liverpool card game made so family can continue playing weekly games during COVID-19 crisis. Playable "
+          a_ (href "http://quarantine-liverpool.herokuapp.com") $ text "here"
+        li_ anil do
+          text "Implemented using React and Socket.IO"
+        li_ anil $ text "Responsive design supports being played on mobile or desktop"
     section_ (className "section" *> id "ssbm") do
       p_ (anil) do
         span_ (className "is-size-5 has-text-weight-bold") $ text "Super Smash Bros. Melee Projects"
